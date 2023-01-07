@@ -8,13 +8,13 @@
 import UIKit
 
 final class EditingTableViewController: UITableViewController{
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         tableView.register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewCell)
     }
-
+    
     private func setupViews() {
         title = "Редактирование"
         view.backgroundColor = .white
@@ -38,10 +38,20 @@ extension EditingTableViewController{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TextViewTableViewCell.idTextViewCell, for: indexPath) as? TextViewTableViewCell else {
             return UITableViewCell()
         }
-        let nameField = Resources.NameFields.allCases[indexPath.row].rawValue
         
-        cell.configure(name: nameField )
-        return cell
+        switch indexPath.row {
+        case 0...2:
+            let nameField = Resources.NameFields.allCases[indexPath.row].rawValue
+            cell.nameTextViewDelegate = self
+            if indexPath.row == 1 {
+                cell.configure(name: nameField, scrollEnable: false)
+            } else {
+                cell.configure(name: nameField, scrollEnable: true)
+            }
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
 }
 
@@ -54,4 +64,9 @@ extension EditingTableViewController{
     }
 }
 
-
+extension EditingTableViewController: NameTextViewProtocol {
+    func changeSize() {
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+}

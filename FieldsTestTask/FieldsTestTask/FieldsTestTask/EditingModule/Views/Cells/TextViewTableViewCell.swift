@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol NameTextViewProtocol: AnyObject {
+    func changeSize()
+}
+
 class TextViewTableViewCell: UITableViewCell {
+    
+    weak var nameTextViewDelegate: NameTextViewProtocol?
     
     static var idTextViewCell = "idTextViewCell"
     
@@ -19,6 +25,8 @@ class TextViewTableViewCell: UITableViewCell {
         
         setupViews()
         setConstraints()
+        textViewDidChange(nameTextView)
+        layoutIfNeeded()
     }
     
     required init?(coder: NSCoder) {
@@ -34,8 +42,9 @@ class TextViewTableViewCell: UITableViewCell {
         nameTextView.delegate = self
     }
     
-    public func configure(name: String) {
+    public func configure(name: String, scrollEnable: Bool) {
         nameLabel.text = name
+        nameTextView.isScrollEnabled = true
     }
 }
 
@@ -44,8 +53,9 @@ class TextViewTableViewCell: UITableViewCell {
 extension TextViewTableViewCell: UITextViewDelegate {
    
     func textViewDidChange(_ textView: UITextView) {
-       
-        contentView.heightAnchor.constraint(equalTo: nameTextView.heightAnchor, multiplier: 1).isActive = true    }
+        contentView.heightAnchor.constraint(equalTo: nameTextView.heightAnchor, multiplier: 1).isActive = true
+        nameTextViewDelegate?.changeSize()
+    }
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .lightGray {
             textView.text = nil
