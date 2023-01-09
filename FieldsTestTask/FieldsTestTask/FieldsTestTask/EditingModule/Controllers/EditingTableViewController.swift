@@ -15,6 +15,8 @@ final class EditingTableViewController: UITableViewController{
         tableView.register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewCell)
         tableView.register(DatePickerTableViewCell.self,
                            forCellReuseIdentifier: DatePickerTableViewCell.idDatePickerCell)
+        tableView.register(PickerViewTableViewCell.self,
+                           forCellReuseIdentifier: PickerViewTableViewCell.idPickerCell)
     }
     
     private func setupViews() {
@@ -57,8 +59,14 @@ extension EditingTableViewController{
                 return UITableViewCell()
             }
                 cell.configure(name: nameField)
-            
             return cell
+        case 4 :
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PickerViewTableViewCell.idPickerCell, for: indexPath) as? PickerViewTableViewCell else {
+                return UITableViewCell()
+            }
+                cell.configure(name: nameField)
+            return cell
+            
         default:
             return UITableViewCell()
         }
