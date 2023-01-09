@@ -17,6 +17,7 @@
 		B241B59B29683BC700E45D5E /* EditingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241B59A29683BC700E45D5E /* EditingTableViewController.swift */; };
 		B2ABB8B1296865D8005E513C /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB8B0296865D8005E513C /* TextViewTableViewCell.swift */; };
 		B2ABB8B329686771005E513C /* NameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB8B229686771005E513C /* NameTextView.swift */; };
+		B2ABB8B5296998D0005E513C /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB8B4296998D0005E513C /* DatePickerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B241B59A29683BC700E45D5E /* EditingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTableViewController.swift; sourceTree = "<group>"; };
 		B2ABB8B0296865D8005E513C /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
 		B2ABB8B229686771005E513C /* NameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextView.swift; sourceTree = "<group>"; };
+		B2ABB8B4296998D0005E513C /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				B2ABB8B0296865D8005E513C /* TextViewTableViewCell.swift */,
+				B2ABB8B4296998D0005E513C /* DatePickerTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				B2ABB8B1296865D8005E513C /* TextViewTableViewCell.swift in Sources */,
 				B2ABB8B329686771005E513C /* NameTextView.swift in Sources */,
 				B241B59929683B4300E45D5E /* MainTableViewController.swift in Sources */,
+				B2ABB8B5296998D0005E513C /* DatePickerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
