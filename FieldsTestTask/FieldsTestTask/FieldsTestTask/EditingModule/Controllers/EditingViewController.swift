@@ -33,6 +33,8 @@ final class EditingViewController: UIViewController{
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveTapped))
         
+        let backBarButtonItem = UIBarButtonItem.createCustomButton(vc: self, selector: #selector(backButtonTapped))
+        navigationItem.leftBarButtonItem = backBarButtonItem
         view.addView(editingTableView)
     }
     
@@ -40,7 +42,17 @@ final class EditingViewController: UIViewController{
         if authFields() {
            presentSimpleAlert(title: "Выполнено", message: "Все обязательные поля заполнены")
         } else {
-            presentSimpleAlert(title: "Ошибка", message: "Заполните поля ФИО, дата рождения, пол")
+            presentSimpleAlert(title: "Ошибка", message: "Заполните поля ФИО, дата рождения, пол ")
+        }
+    }
+    @objc private func backButtonTapped() {
+        presentChangeAlert { value in
+            if value {
+                print(self.userModel)
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     
