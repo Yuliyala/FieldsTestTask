@@ -1,44 +1,40 @@
 //
-//  EditingTableViewController.swift
+//  EditingTableView.swift
 //  FieldsTestTask
 //
-//  Created by Yuliya Lapenak on 1/6/23.
+//  Created by Yuliya Lapenak on 1/10/23.
 //
 
 import UIKit
 
-final class EditingTableViewController: UITableViewController{
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupViews()
-        tableView.register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewCell)
-        tableView.register(DatePickerTableViewCell.self,
-                           forCellReuseIdentifier: DatePickerTableViewCell.idDatePickerCell)
-        tableView.register(PickerViewTableViewCell.self,
-                           forCellReuseIdentifier: PickerViewTableViewCell.idPickerCell)
-    }
-    
-    private func setupViews() {
-        title = "Редактирование"
-        view.backgroundColor = .white
+class EditingTableView: UITableView {
+  
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(editingTapped))
+        register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewCell)
+        register(DatePickerTableViewCell.self,
+                           forCellReuseIdentifier: DatePickerTableViewCell.idDatePickerCell)
+        register(PickerViewTableViewCell.self,
+                           forCellReuseIdentifier: PickerViewTableViewCell.idPickerCell)
+        
+        delegate = self
+        dataSource = self
     }
     
-    @objc private func editingTapped() {
-        print("Tap")
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
 // MARK: - UITableViewDataSource
 
-extension EditingTableViewController{
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension EditingTableView: UITableViewDataSource {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         Resources.NameFields.allCases.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         let nameField = Resources.NameFields.allCases[indexPath.row].rawValue
         
@@ -75,16 +71,16 @@ extension EditingTableViewController{
 
 // MARK: - UITableViewDelegate
 
-extension EditingTableViewController{
+extension EditingTableView: UITableViewDelegate{
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         indexPath.row == 1 ? UITableView.automaticDimension : 44
     }
 }
 
-extension EditingTableViewController: NameTextViewProtocol {
+extension EditingTableView: NameTextViewProtocol {
     func changeSize() {
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        beginUpdates()
+        endUpdates()
     }
 }
