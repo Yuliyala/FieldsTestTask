@@ -24,6 +24,7 @@
 		B2ABB8DD296D7A99005E513C /* EditingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB8DC296D7A99005E513C /* EditingTableView.swift */; };
 		B2ABB8E0296D817C005E513C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB8DF296D817C005E513C /* UserModel.swift */; };
 		B2ABB8E3296D8385005E513C /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB8E2296D8385005E513C /* UserDefaultsHelper.swift */; };
+		B2ABB8E5296D9B1F005E513C /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB8E4296D9B1F005E513C /* UIViewController + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		B2ABB8DC296D7A99005E513C /* EditingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTableView.swift; sourceTree = "<group>"; };
 		B2ABB8DF296D817C005E513C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B2ABB8E2296D8385005E513C /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		B2ABB8E4296D9B1F005E513C /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				B241B5922967159800E45D5E /* UIView + Extensions.swift */,
+				B2ABB8E4296D9B1F005E513C /* UIViewController + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				B241B59B29683BC700E45D5E /* EditingViewController.swift in Sources */,
 				B241B58E2967125400E45D5E /* MainTableViewCell.swift in Sources */,
 				B241B5712967086F00E45D5E /* AppDelegate.swift in Sources */,
+				B2ABB8E5296D9B1F005E513C /* UIViewController + Extensions.swift in Sources */,
 				B2ABB8B1296865D8005E513C /* TextViewTableViewCell.swift in Sources */,
 				B2ABB8D7296C6CA5005E513C /* PickerViewTableViewCell.swift in Sources */,
 				B2ABB8B329686771005E513C /* NameTextView.swift in Sources */,

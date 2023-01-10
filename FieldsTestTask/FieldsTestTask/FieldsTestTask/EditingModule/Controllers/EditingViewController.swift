@@ -37,7 +37,22 @@ final class EditingViewController: UIViewController{
     }
     
     @objc private func saveTapped() {
-        print("Tap")
+        if authFields() {
+           presentSimpleAlert(title: "Выполнено", message: "Все обязательные поля заполнены")
+        } else {
+            presentSimpleAlert(title: "Ошибка", message: "Заполните поля ФИО, дата рождения, пол")
+        }
+    }
+    
+    private func authFields() -> Bool {
+        if userModel.firstName != "" ||
+            userModel.secondName != "" ||
+            userModel.birthday != "" ||
+            userModel.gender != "" ||
+            userModel.gender != "Не указано" {
+            return true
+        }
+      return false
     }
 }
 
