@@ -39,8 +39,9 @@ class MainTableViewCell: UITableViewCell {
         addView(valueLabel)
     }
     
-    public func configure(name: String) {
+    public func configure(name: String, value: String) {
         nameLabel.text = name
+        valueLabel.text = value
     }
 }
 

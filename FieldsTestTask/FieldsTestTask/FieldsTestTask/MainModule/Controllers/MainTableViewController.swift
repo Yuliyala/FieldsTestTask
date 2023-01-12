@@ -15,7 +15,7 @@ final class MainTableViewController: UITableViewController{
         super.viewDidLoad()
         setupViews()
         getUserModel()
-        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.idMainTableViewCell)
+        tableView.register(MainTableViewCell.self)
         print(userModel)
     }
 
@@ -43,12 +43,13 @@ extension MainTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.idMainTableViewCell, for: indexPath) as? MainTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(MainTableViewCell.self) else {
             return UITableViewCell()
         }
         let nameField = Resources.NameFields.allCases[indexPath.row].rawValue
+        let value = UserDefaultsHelper.getUserValue(Resources.NameFields.allCases[indexPath.row].rawValue)
         
-        cell.configure(name: nameField )
+        cell.configure(name: nameField, value: value)
         return cell
     }
 }
