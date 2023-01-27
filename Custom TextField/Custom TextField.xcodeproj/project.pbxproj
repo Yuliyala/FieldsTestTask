@@ -13,6 +13,7 @@
 		B295277E2982A064007BF51B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B295277D2982A064007BF51B /* Assets.xcassets */; };
 		B29527812982A065007BF51B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B295277F2982A065007BF51B /* LaunchScreen.storyboard */; };
 		B29527892982A328007BF51B /* RegisterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29527882982A328007BF51B /* RegisterTextField.swift */; };
+		B295278B2982B59E007BF51B /* EyeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295278A2982B59E007BF51B /* EyeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B29527802982A065007BF51B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B29527822982A065007BF51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B29527882982A328007BF51B /* RegisterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextField.swift; sourceTree = "<group>"; };
+		B295278A2982B59E007BF51B /* EyeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				B29527762982A061007BF51B /* SceneDelegate.swift */,
 				B29527782982A061007BF51B /* AuthViewController.swift */,
 				B29527882982A328007BF51B /* RegisterTextField.swift */,
+				B295278A2982B59E007BF51B /* EyeButton.swift */,
 				B295277D2982A064007BF51B /* Assets.xcassets */,
 				B295277F2982A065007BF51B /* LaunchScreen.storyboard */,
 				B29527822982A065007BF51B /* Info.plist */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29527892982A328007BF51B /* RegisterTextField.swift in Sources */,
+				B295278B2982B59E007BF51B /* EyeButton.swift in Sources */,
 				B29527792982A061007BF51B /* AuthViewController.swift in Sources */,
 				B29527752982A061007BF51B /* AppDelegate.swift in Sources */,
 				B29527772982A061007BF51B /* SceneDelegate.swift in Sources */,

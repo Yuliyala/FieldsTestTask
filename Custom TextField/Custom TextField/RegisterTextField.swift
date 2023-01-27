@@ -57,6 +57,8 @@ final class RegisterTextField: UITextField {
         //инициализируем в свойстве attributedPlaceholder класс  NSAttributedString , в параметре стринг определяем текст плэйсхолдера,
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemCyan])
         font = .boldSystemFont(ofSize: 18)
+        //изначально текстовое поле будет отображать текст
+        isSecureTextEntry = true
         
         heightAnchor.constraint(equalToConstant: 60).isActive = true
         
